@@ -1,5 +1,5 @@
 const express=require('express');
-const wrapAsync = require('../utils/wrapAsync/wrapasync');
+const wrapAsync = require('../utils/wrapAsync/wrapAsync');
 const router=express.Router();
 const User=require('../models/user.js');
 const passport=require('passport');
