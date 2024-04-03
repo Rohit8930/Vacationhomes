@@ -86,6 +86,7 @@ passport.deserializeUser(User.deserializeUser());
 app.use((req,res,next)=>{
     res.locals.success=req.flash('success');
     res.locals.error=req.flash('error');
+    // console.log(req.user);
     res.locals.currUser=req.user;
     console.log("s,f,user");
     next();
@@ -110,8 +111,9 @@ app.get('/demouser',async(req,res)=>{
 })
 
 
-
-
+app.get('/',(req,res)=>{
+    res.render("listings/first.ejs");
+})
 app.use('/listings',listingRouter);
 app.use('/listings/:id/review',reviewRouter);
 app.use('/',userRouter);
